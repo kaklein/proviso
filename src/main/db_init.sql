@@ -3,6 +3,7 @@ CREATE USER 'proviso_user'@'localhost' IDENTIFIED WITH mysql_native_password BY 
 GRANT ALL PRIVILEGES ON proviso.* TO'proviso_user'@'localhost';
 
 
+
 DROP TABLE IF EXISTS orders;
 CREATE TABLE orders (
   id int NOT NULL AUTO_INCREMENT,
