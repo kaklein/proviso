@@ -1,6 +1,7 @@
 package proviso.service.impl;
 
 import proviso.service.JdbcManager;
+import proviso.service.dao.OrderDao;
 import proviso.model.Order;
 
 import java.sql.Connection;
@@ -12,7 +13,7 @@ public class JdbcOrderDao implements OrderDao {
 	JdbcManager db;
 	
 	// Constructor
-	public JdbcUserDao() {
+	public JdbcOrderDao() {
 		db = new JdbcManager();
 	}
 	
