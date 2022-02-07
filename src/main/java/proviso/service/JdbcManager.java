@@ -15,10 +15,9 @@ public class JdbcManager {
 	
 	// constructor
 	public JdbcManager() {
-		/* TO-DO: update these variables to match db_init.sql */
 		this.jdbcUrl = "jdbc:mysql://localhost:3306/proviso";	
 		this.jdbcUserName = "proviso_user";
-		this.jdbcPassword = "provisoPass";
+		this.jdbcPassword = "password";
 		
 		// call MySQL JDBC driver
 		try {
