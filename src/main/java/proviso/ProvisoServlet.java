@@ -15,6 +15,9 @@ import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
 import jakarta.servlet.annotation.WebServlet;
 
+import proviso.model.LoginBean;
+import proviso.service.impl.JdbcUserDao;
+
 
 @WebServlet("/hotel/*")
 public class ProvisoServlet extends HttpServlet implements Servlet {
@@ -40,14 +43,33 @@ public class ProvisoServlet extends HttpServlet implements Servlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String base = "";
+		String base = "/jsp/";
 		String url = base + "index.jsp";
 		String action = request.getParameter("action");
 		
 		if (action != null) {
 			switch (action) {
 				/* TO-DO: switch cases for each possible action (call methods and/or update url */
-			
+				case "login":
+					String username= request.getParameter("email");
+					String password= request.getParameter("password");
+					
+					LoginBean loginBean = new LoginBean(); 
+					loginBean.setUsername(username);
+					loginBean.setPassword(password);
+					
+					JdbcUserDao loginDao = new JdbcUserDao();
+					
+				
+				
+			            if (loginDao.validate(loginBean)) {
+			              	System.out.println("login successful.");
+			                url = base + "LoginSuccess.jsp";
+			            } else {
+			                url = base + "Login.jsp";
+			                System.out.println("login failed.");
+			            }
+					break;
 			}
 		}
 		

@@ -67,7 +67,7 @@ public class Order {
   public int getGuests() { return guests; }
   public void setGuests(int guests) { this.guests = guests; }
   
-  public int getPrice() { return price; }
+  public float getPrice() { return price; }
   public void setPrice(int price) { this.price = price; }
   
   public int getPointsEarned() { return pointsEarned; }

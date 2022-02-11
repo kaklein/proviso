@@ -23,7 +23,8 @@
     <main>
         <div class="container" id="login" style="background: url(../images/loginBackGround.jpg) center;">
             <section class="login-clean" style="opacity: 1;background: rgba(252,242,241,0);">
-                <form method="post" style="opacity: 1;filter: blur(0px) brightness(100%) grayscale(0%) hue-rotate(0deg) invert(0%) sepia(0%);">
+                <form action="${pageContext.request.contextPath}/hotel/ProvisoServlet" method="post" style="opacity: 1;filter: blur(0px) brightness(100%) grayscale(0%) hue-rotate(0deg) invert(0%) sepia(0%);">
+                    <input type="hidden" name="action" value="login">
                     <h2 class="visually-hidden">Login Form</h2>
                     <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Email"></div>
                     <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password"></div>
