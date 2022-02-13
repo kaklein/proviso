@@ -20,7 +20,7 @@ public class JdbcUserDao implements UserDao {
 	}
 	
 	public boolean validate(LoginBean loginBean) {
-		/* SPRINT 1 TO-DO: method to check whether user login info matches database */
+		/* SPRINT 1: method to check whether user login info matches database */
 		Connection con = db.getConn();
 		
 		boolean status = false;
@@ -47,9 +47,29 @@ public class JdbcUserDao implements UserDao {
 	}
 	
 	@Override
-	public void add(User user) {
-		/* SPRINT 1 TO-DO: method to add new user to database (register method) */
-		
+	public boolean add(User userdb) {
+	/* SPRINT 1: method to add new user to database (register method) */
+    boolean set = false;
+    
+    Connection con = db.getConn();
+    
+    try{
+        //Insert register data to database
+        String query = "insert into users(first_name,last_name,email,password,points) values(?,?,?,?,?)";
+       
+       PreparedStatement pt = con.prepareStatement(query);
+       pt.setString(1, userdb.getFirstName());
+       pt.setString(2, userdb.getLastName());
+       pt.setString(3, userdb.getEmail());
+       pt.setString(4, userdb.getPassword());
+       pt.setInt(5,  userdb.getPoints());
+       
+       pt.executeUpdate();
+       set = true;
+    }catch(Exception e){
+        e.printStackTrace();
+    }
+    return set;	
 	}
 	
 	@Override

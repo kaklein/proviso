@@ -3,6 +3,7 @@ package proviso;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
@@ -16,6 +17,7 @@ import jakarta.servlet.ServletResponse;
 import jakarta.servlet.annotation.WebServlet;
 
 import proviso.model.LoginBean;
+import proviso.model.User;
 import proviso.service.impl.JdbcUserDao;
 
 
@@ -50,7 +52,7 @@ public class ProvisoServlet extends HttpServlet implements Servlet {
 		if (action != null) {
 			switch (action) {
 				/* TO-DO: switch cases for each possible action (call methods and/or update url */
-				case "login":
+				case "login": {
 					String username= request.getParameter("email");
 					String password= request.getParameter("password");
 					
@@ -64,12 +66,41 @@ public class ProvisoServlet extends HttpServlet implements Servlet {
 				
 			            if (loginDao.validate(loginBean)) {
 			              	System.out.println("login successful.");
+			              	HttpSession loginSession = request.getSession();
+			              	loginSession.setAttribute("username",  username); // add logged in user to session
 			                url = base + "LoginSuccess.jsp";
 			            } else {
 			                url = base + "Login.jsp";
 			                System.out.println("login failed.");
 			            }
 					break;
+				}
+				case "register": {
+					String First_name = request.getParameter("firstName");
+					String Last_name = request.getParameter("lastName");
+					String email = request.getParameter("userName");
+					String password = request.getParameter("password");
+					
+					//make user object
+					User userModel = new User(email, password);
+					userModel.setFirstName(First_name);
+					userModel.setLastName(Last_name);
+					
+					//create a database model
+					JdbcUserDao regUser = new JdbcUserDao();
+					
+					if (regUser.add(userModel)) {
+					   url = base + "index.jsp";
+					   HttpSession regSession = request.getSession();
+					   regSession.setAttribute("username", email); // add registered user to session
+					} else {
+				    String errorMessage = "User Already Exist";
+				    HttpSession regSession = request.getSession();
+				    regSession.setAttribute("RegError", errorMessage);
+				    url = base + "Registration.jsp";
+					}
+					break;
+				}
 			}
 		}
 		
@@ -77,8 +108,5 @@ public class ProvisoServlet extends HttpServlet implements Servlet {
 		rd.forward(request, response); // redirect to url
 		
 	}
-	
-	/* TO-DO: define methods for use in action switch case */
-	
 
 }

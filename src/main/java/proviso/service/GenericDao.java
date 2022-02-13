@@ -7,7 +7,7 @@ package proviso.service;
 
 public interface GenericDao<E, K> {
 	
-	public void add(E entity);
+	public boolean add(E entity);
 		
 	public E find(K key);
 	
