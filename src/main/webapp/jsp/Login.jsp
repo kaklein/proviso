@@ -28,7 +28,10 @@
                     <h2 class="visually-hidden">Login Form</h2>
                     <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Email"></div>
                     <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password"></div>
-                    <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" style="background: var(--bs-blue);font-weight: bold;">Log In</button></div>
+                    <div class="mb-3">
+                    	<button class="btn btn-primary d-block w-100" type="submit" style="background: var(--bs-blue);font-weight: bold;">Log In</button>
+                   	</div>
+                   	<a class="text-center d-block w-100 text-decoration-none" href="#" style="color: var(--bs-white);opacity: 1;text-align: center;font-weight: bold;font-size: 16px;">Not a Member?  Sign Up!<br /></a>
                 </form>
             </section>
         </div>
