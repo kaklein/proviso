@@ -22,7 +22,7 @@
 <body style="background: rgb(255, 255, 255);">
 	<jsp:include page="TopNavBar.jsp" flush="true"/>
     <main>
-        <div class="container" id="booking" style="background: url(..//images/loginBackGround.jpg) center;">
+        <div class="container" id="booking" style="background: url(..//images/reservationBackground.jpg) center;">
             <form id="bookingForm" method="post">
                 <div class="row justify-content-center">
                     <div class="col-3 align-self-end text-end" style="background: rgba(50,41,40,0);text-shadow: 0px 0px;filter: invert(0%);">
