@@ -58,3 +58,13 @@
   margin-bottom: 0;
 }
 
+input[type="date"] {
+  display: flex;
+  flex-flow: row-reverse;
+  padding: 8px;
+  height: auto;
+  background: transparent;
+  color: white;
+  filter: invert(100%);
+}
+
