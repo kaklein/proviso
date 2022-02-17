@@ -61,10 +61,13 @@
 input[type="date"] {
   display: flex;
   flex-flow: row-reverse;
-  padding: 8px;
+  padding: auto;
   height: auto;
   background: transparent;
   color: white;
-  filter: invert(100%);
+}
+
+#bookingDropdowns {
+  padding-bottom: 30px;
 }
 
