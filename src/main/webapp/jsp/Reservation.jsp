@@ -12,13 +12,13 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&amp;display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="../assets/css/Footer-Basic.css">
-    <link rel="stylesheet" href="../assets/css/Login-Form-Clean-1.css">
-    <link rel="stylesheet" href="../assets/css/Login-Form-Clean.css">
-    <link rel="stylesheet" href="../assets/css/Login-Form-Dark.css">
-    <link rel="stylesheet" href="../assets/css/Navigation-Clean.css">
-    <link rel="stylesheet" href="../assets/css/Registration-Form-with-Photo.css">
-    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/Login-Form-Clean-1.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/Login-Form-Dark.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/styles.css">
 </head>
 
 <body>
@@ -40,25 +40,29 @@
                    		</label>
                 	</div>
                 </div>
-                <div class="dropdown">
-                	<button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button" style="background: #1e2833;color: var(--bs-gray-500);" name="numberOfGuests">Number of Guests</button>
-                   	<div class="dropdown-menu">
-                   		<a class="dropdown-item" value="1">One Guest</a>
-                   		<a class="dropdown-item" value="2">Two Guests</a>
-                   		<a class="dropdown-item" value="3">Three Guests</a>
-                   		<a class="dropdown-item" value="4">Four Guests</a>
-                   		<a class="dropdown-item" value="5">Five Guests</a>
-                  	</div>
-                </div>
-                <div class="dropdown">
-                	<button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button" style="background: #1e2833;color: var(--bs-gray-500);" name="roomSize">Room Size</button>
-                    <div class="dropdown-menu">
-                    	<a class="dropdown-item" value="king">King Bed</a>
-                    	<a class="dropdown-item" value="queen">Queen Bed</a>
-                    	<a class="dropdown-item" value="dubQueen">Two Queens</a>
-                    	<a class="dropdown-item" value="dubFull">Two Full</a>
-                    </div>
-                </div>
+                <div id="bookingDropdowns" class="form-group form-group-row">
+                	<select class="form-select" name="numberGuests"style="background: #1e2833;border-style: none;color: var(--bs-gray-500);">
+    					<optgroup label="Number of Guests">
+					        <option value=""disabled selected hidden>Number of Guests</option>
+					        <option value="1">1</option>
+					        <option value="2">2</option>
+					        <option value="3">3</option>
+					        <option value="4">4</option>
+					        <option value="5">5</option>
+    					</optgroup>
+					</select>
+				</div>
+                <div id="bookingDropdowns" class="form-group form-group-row">
+                	<select class="form-select" name="roomSize" style="background: #1e2833;border-style: none;color: var(--bs-gray-500);">
+    					<optgroup label="Room Sizes">
+					        <option value=""disabled selected hidden>Select a Room Size</option>
+					        <option value="king">One King</option>
+					        <option value="queen">One Queen</option>
+					        <option value="twoQueen">Two Queen</option>
+					        <option value="twoFull">Two Full</option>
+    					</optgroup>
+					</select>
+				</div>
                 <div class="mb-3">
                     <div class="form-check">
                     	<input class="form-check-input" type="checkbox" id="wifi" checked="" name="wifi" value="true">
