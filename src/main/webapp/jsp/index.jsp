@@ -11,8 +11,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&amp;display=swap">
-    <link rel="stylesheet" href="../assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="../assets/css/Login-Form-Clean-1.css">
     <link rel="stylesheet" href="../assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="../assets/css/Login-Form-Dark.css">
     <link rel="stylesheet" href="../assets/css/Navigation-Clean.css">
     <link rel="stylesheet" href="../assets/css/Registration-Form-with-Photo.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
