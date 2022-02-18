@@ -19,13 +19,22 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/Navigation-Clean.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/Registration-Form-with-Photo.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/styles.css">
+    
+    <%
+    	// check for logged in user
+    	String message = "";
+    	if (session.getAttribute("username") != null) { 
+    		message = "<p>Logged in as " + session.getAttribute("username") + "</p><p><a href='/proviso/hotel?action=logout'>Log out</a></p>";
+    	} 
+    %>
 </head>
 
 <body>
 	<jsp:include page="TopNavBar.jsp" flush="true"/>
     <div class="container container-fluid" id="background">
         <section class="login-dark">
-            <form class="form-inline" method="post">
+            <form class="form-inline" method="post" action="${pageContext.request.contextPath}/hotel/ProvisoServlet">
+            		<input type="hidden" name="action" value="bookReservation">
                 <div class="form-group form-group-row">
                     <div class="mb-3">
                     	<label class="form-label" for="checkinDate" style="text-align: center;color: var(--bs-gray-500);">Check-In Date:
@@ -82,7 +91,10 @@
                     </div>
                 </div>
                 <div class="mb-3">
-                	<button class="btn btn-primary d-block w-100" type="submit" style="background: var(--bs-blue);font-weight: bold;color: var(--bs-gray-500);font-size: 18px;">Book Now - Submit</button>
+                	<button class="btn btn-primary d-block w-100" type="submit" style="background: var(--bs-blue);font-weight: bold;color: var(--bs-gray-500);font-size: 18px;">Book Now</button>
+                </div>
+                <div class="mb-3" style="text-align: center;">
+                	<i><%= message %></i>
                 </div>
             </form>
         </section>
