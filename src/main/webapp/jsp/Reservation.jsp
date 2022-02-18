@@ -38,14 +38,14 @@
                 <div class="form-group form-group-row">
                     <div class="mb-3">
                     	<label class="form-label" for="checkinDate" style="text-align: center;color: var(--bs-gray-500);">Check-In Date:
-                    		<input class="form-control" id="checkinDate" type="date" style="color: var(--bs-gray-600);text-align: center;font-weight: bold;" name="checkInDate">
+                    		<input class="form-control" id="checkinDate" type="date" style="color: var(--bs-gray-600);text-align: center;font-weight: bold;" name="checkInDate" required>
                    		</label>
                		</div>
                 </div>
                 <div class="form-group form-group-row">
                     <div class="mb-3">
                     	<label class="form-label" for="checkinDate" style="text-align: center;color: var(--bs-gray-500);">Check-Out Date:
-                    		<input class="form-control" id="checkoutDate" type="date" style="color: var(--bs-gray-600);text-align: center;font-weight: bold;" name="checkOutDate">
+                    		<input class="form-control" id="checkoutDate" type="date" style="color: var(--bs-gray-600);text-align: center;font-weight: bold;" name="checkOutDate" required>
                    		</label>
                 	</div>
                 </div>

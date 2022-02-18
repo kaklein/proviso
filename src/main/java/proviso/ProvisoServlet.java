@@ -109,25 +109,33 @@ public class ProvisoServlet extends HttpServlet implements Servlet {
 					break;
 				}
 				case "bookReservation": {
-					// save order information to session
-					HttpSession session = request.getSession();
-					session.setAttribute("checkin", request.getParameter("checkInDate"));
-					session.setAttribute("checkout", request.getParameter("checkOutDate"));
-					session.setAttribute("room", request.getParameter("roomSize"));
-					session.setAttribute("wifi", request.getParameter("wifi") != null ? true : false);
-					session.setAttribute("breakfast", request.getParameter("breakfast") != null ? true : false);
-					session.setAttribute("parking", request.getParameter("parking") != null ? true : false);
-					session.setAttribute("guests", request.getParameter("numberGuests"));			
-					
-					// check if user is logged in
-					JdbcUserDao userDao = new JdbcUserDao();										
-					int customerId = userDao.getCustomerId(String.valueOf(session.getAttribute("username")));
-					
-					if (customerId > 0) {
-						url = base + "ReservationSummary.jsp";
+					// check that all fields are filled out
+					if (request.getParameter("numberGuests") != null && request.getParameter("roomSize") != null) {
+						// save order information to session
+						HttpSession session = request.getSession();
+						session.setAttribute("checkin", request.getParameter("checkInDate"));
+						session.setAttribute("checkout", request.getParameter("checkOutDate"));
+						session.setAttribute("room", request.getParameter("roomSize"));
+						session.setAttribute("wifi", request.getParameter("wifi") != null ? true : false);
+						session.setAttribute("breakfast", request.getParameter("breakfast") != null ? true : false);
+						session.setAttribute("parking", request.getParameter("parking") != null ? true : false);
+						session.setAttribute("guests", request.getParameter("numberGuests"));			
+						
+						// check if user is logged in
+						JdbcUserDao userDao = new JdbcUserDao();										
+						int customerId = userDao.getCustomerId(String.valueOf(session.getAttribute("username")));
+						
+						if (customerId > 0) {
+							url = base + "ReservationSummary.jsp";
+						} else {
+							url = base + "Login.jsp";
+						}
 					} else {
-						url = base + "Login.jsp";
+						System.out.println("number of guests and/or room size not selected");
+						url = base + "Reservation.jsp";
 					}
+					
+					
 					break;
 				}
 				
