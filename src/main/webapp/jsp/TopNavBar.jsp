@@ -7,7 +7,7 @@
 	        <ul class="navbar-nav ms-auto">
 	            <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/jsp/Reservation.jsp" style="font-family: 'Open Sans', sans-serif;color: var(--bs-blue);font-weight: bold;">Book Now</a></li>
 	            <li class="nav-item"><a class="nav-link" href="#" style="font-family: 'Open Sans', sans-serif;color: var(--bs-blue);font-weight: bold;">Reservations</a></li>
-	            <li class="nav-item"><a class="nav-link" href="#" style="font-family: 'Open Sans', sans-serif;color: var(--bs-blue);font-weight: bold;">About</a></li>
+	            <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/jsp/About.jsp" style="font-family: 'Open Sans', sans-serif;color: var(--bs-blue);font-weight: bold;">About</a></li>
 	            <li class="nav-item"><a class="nav-link" href="#" style="font-family: 'Open Sans', sans-serif;color: var(--bs-blue);font-weight: bold;">Rewards</a></li>
 	            <li class="nav-item"><a class="nav-link" href="#" style="font-family: 'Open Sans', sans-serif;color: var(--bs-blue);font-weight: bold;">Contact</a></li>
             </ul>
