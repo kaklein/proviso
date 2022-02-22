@@ -99,10 +99,5 @@
             </div>
         </div>
     </section>
-    <footer class="footer-basic">
-        <p class="copyright">Proviso - Bellevue University © 2022</p>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
+    <jsp:include page="Footer.jsp" flush="true"/>
 </html>
