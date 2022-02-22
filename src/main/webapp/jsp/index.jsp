@@ -11,8 +11,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&amp;display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="../assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="../assets/css/Login-Form-Clean-1.css">
     <link rel="stylesheet" href="../assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="../assets/css/Login-Form-Dark.css">
     <link rel="stylesheet" href="../assets/css/Navigation-Clean.css">
     <link rel="stylesheet" href="../assets/css/Registration-Form-with-Photo.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
@@ -24,9 +27,9 @@
         <section class="portfolio-block photography">
             <div class="container">
                 <div class="row g-0">
-                    <div class="col-md-6 col-lg-4 item zoom-on-hover"><img class="img-fluid image" src="../images/landingBridgeScene.jpg"></div>
-                    <div class="col-md-6 col-lg-4 item zoom-on-hover"><img class="img-fluid image" src="../images/landingHotelBed.jpg"></div>
-                    <div class="col-md-6 col-lg-4 item zoom-on-hover"><img class="img-fluid image" src="../images/landingHotelRoom.jpg"></div>
+                    <div class="col-md-6 col-lg-4 item zoom-on-hover"><img class="img-fluid image" src="${pageContext.request.contextPath}/images/landingBridgeScene.jpg"></div>
+                    <div class="col-md-6 col-lg-4 item zoom-on-hover"><img class="img-fluid image" src="${pageContext.request.contextPath}/images/landingHotelBed.jpg"></div>
+                    <div class="col-md-6 col-lg-4 item zoom-on-hover"><img class="img-fluid image" src="${pageContext.request.contextPath}/images/landingHotelRoom.jpg"></div>
                 </div>
             </div>
         </section>
@@ -36,9 +39,9 @@
             </div>
             <div class="carousel slide" data-bs-ride="carousel" id="carousel-1">
                 <div class="carousel-inner">
-                    <div class="carousel-item active"><img class="w-100 d-block" src="../images/carousel1.jpg" alt="Slide Image"></div>
-                    <div class="carousel-item"><img class="w-100 d-block" src="../images/carousel2.jpg" alt="Slide Image"></div>
-                    <div class="carousel-item"><img class="w-100 d-block" src="../images/carousel3.jpg" alt="Slide Image"></div>
+                    <div class="carousel-item active"><img class="w-100 d-block" src="${pageContext.request.contextPath}/images/carousel1.jpg" alt="Slide Image"></div>
+                    <div class="carousel-item"><img class="w-100 d-block" src="${pageContext.request.contextPath}/images/carousel2.jpg" alt="Slide Image"></div>
+                    <div class="carousel-item"><img class="w-100 d-block" src="${pageContext.request.contextPath}/images/carousel3.jpg" alt="Slide Image"></div>
                 </div>
                 <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span><span class="visually-hidden">Previous</span></a><a class="carousel-control-next" href="#carousel-1" role="button" data-bs-slide="next"><span class="carousel-control-next-icon"></span><span class="visually-hidden">Next</span></a></div>
                 <ol class="carousel-indicators">

@@ -58,3 +58,16 @@
   margin-bottom: 0;
 }
 
+input[type="date"] {
+  display: flex;
+  flex-flow: row-reverse;
+  padding: auto;
+  height: auto;
+  background: transparent;
+  color: white;
+}
+
+#bookingDropdowns {
+  padding-bottom: 20px;
+}
+

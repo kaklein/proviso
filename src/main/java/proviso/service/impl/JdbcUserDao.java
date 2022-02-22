@@ -78,5 +78,26 @@ public class JdbcUserDao implements UserDao {
 		User user = new User("username", "pass");//delete this - only exists to avoid errors
 		return user;// delete this - only exists to avoid errors
 	}
+	
+	public int getCustomerId(String username) {
+		int customerId = -1;
+		
+		Connection conn = db.getConn();
+		String sql = "SELECT id FROM users WHERE email = ?";
+		PreparedStatement ps;
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, username);
+			
+			ResultSet rs = ps.executeQuery();
+			while (rs.next() ) {
+				customerId = rs.getInt("id");
+			}
+		} catch (SQLException e){
+			System.out.println("Exception getting user id: " + e);			
+		}
+		
+		return customerId;
+	}
 
 }
