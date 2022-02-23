@@ -66,9 +66,33 @@ public class JdbcOrderDao implements OrderDao {
 	
 	@Override
 	public Order find(Long orderId) {
-		/* SPRINT 3 TO-DO: method to return order object from orderId for reservation lookup page */
+		/* SPRINT 3 TODO: method to return order object from orderId for reservation lookup page */
 		Order order = new Order(1, "", "", "", true, true, true, 1, 1, 1); // delete this - only here to avoid errors
 		return order; // delete this - only here to avoid errors
+	}
+	
+	
+	// used to display the order number on the OrderSuccess page
+	public int getOrderNumber() {
+		int orderNumber = 0;
+
+		Connection conn = db.getConn();
+		try {
+			String sql = "SELECT MAX(id) FROM orders";
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			if (rs.next()) {
+				orderNumber = rs.getInt(1);
+				return orderNumber;
+			}
+			
+		} catch (SQLException e) {
+			System.out.println("Exception adding order to database: " + e);
+		}	finally {
+			db.closeConn(conn);
+		}
+				
+		return 87;
 	}
 
 }
