@@ -36,7 +36,6 @@
                         <div class="cover">
                             <h3 class="name">Tony Nebel</h3>
                             <p class="title">Developer</p>
-                            <p class="title">add some words about you if you like</p>
                         </div>
                     </div>
                 </div>
