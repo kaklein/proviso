@@ -35,15 +35,27 @@
         </section>
         <section>
             <div class="container" style="color: var(--bs-white);font-family: 'Open Sans', sans-serif;font-weight: bold;background: var(--bs-blue);">
-                <h1 class="text-center"><a class="text-decoration-none" href="#" style="color: var(--bs-white);border-style: none;">Relaxation Awaits - Book Now</a></h1>
+                <h1 class="text-center">
+                <a class="text-decoration-none" href="${pageContext.request.contextPath}/jsp/Reservation.jsp" style="color: var(--bs-white);border-style: none;">Relaxation Awaits - Book Now</a></h1>
             </div>
             <div class="carousel slide" data-bs-ride="carousel" id="carousel-1">
                 <div class="carousel-inner">
-                    <div class="carousel-item active"><img class="w-100 d-block" src="${pageContext.request.contextPath}/images/carousel1.jpg" alt="Slide Image"></div>
-                    <div class="carousel-item"><img class="w-100 d-block" src="${pageContext.request.contextPath}/images/carousel2.jpg" alt="Slide Image"></div>
-                    <div class="carousel-item"><img class="w-100 d-block" src="${pageContext.request.contextPath}/images/carousel3.jpg" alt="Slide Image"></div>
+                    <div class="carousel-item active">
+                    	<img class="w-75 d-block mx-auto" src="${pageContext.request.contextPath}/images/carousel1.jpg" alt="Slide Image"></div>
+                    <div class="carousel-item">
+                    	<img class="w-75 d-block mx-auto" src="${pageContext.request.contextPath}/images/carousel2.jpg" alt="Slide Image"></div>
+                    <div class="carousel-item">
+                    	<img class="w-75 d-block mx-auto" src="${pageContext.request.contextPath}/images/carousel3.jpg" alt="Slide Image"></div>
                 </div>
-                <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span><span class="visually-hidden">Previous</span></a><a class="carousel-control-next" href="#carousel-1" role="button" data-bs-slide="next"><span class="carousel-control-next-icon"></span><span class="visually-hidden">Next</span></a></div>
+                <div>
+                	<a class="carousel-control-prev" href="#carousel-1" role="button" data-bs-slide="prev" style="margin: 120px">
+                		<span class="carousel-control-prev-icon"></span>
+                		<span class="visually-hidden">Previous</span></a>
+               		<a class="carousel-control-next" href="#carousel-1" role="button" data-bs-slide="next" style="margin: 120px">
+               			<span class="carousel-control-next-icon"></span>
+               			<span class="visually-hidden">Next</span>
+           			</a>
+          		</div>
                 <ol class="carousel-indicators">
                     <li data-bs-target="#carousel-1" data-bs-slide-to="0" class="active"></li>
                     <li data-bs-target="#carousel-1" data-bs-slide-to="1"></li>
