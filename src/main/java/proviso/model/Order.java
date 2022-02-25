@@ -29,7 +29,8 @@ public class Order {
 
   // use this constructor if pulling from the database
 	public Order(int id, int customerId, String checkin, String checkout, String room, Boolean wifi, Boolean breakfast, Boolean parking, int guests, float price, int pointsEarned) {
-    this.customerId = customerId;
+    this.id = id;
+		this.customerId = customerId;
     this.checkin = checkin;
     this.checkout = checkout;
     this.room = room;
