@@ -43,7 +43,7 @@
 	          
           <% 
           if (request.getMethod().equals("POST")) {
-          	if (request.getParameter("customerId") != null) {
+          	if (request.getParameter("customerId") != null && !request.getParameter("customerId").equals("")) {
           %>     
 	            <div class="row justify-content-center text-center">
 	                <div class="col-6" style="color: var(--bs-white);">
