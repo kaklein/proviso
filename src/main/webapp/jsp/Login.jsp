@@ -36,6 +36,6 @@
             </section>
         </div>
     </main>
-    <jsp:include page="TopNavBar.jsp" flush="true"/>
+    <jsp:include page="Footer.jsp" flush="true"/>
 </body>
 </html>
