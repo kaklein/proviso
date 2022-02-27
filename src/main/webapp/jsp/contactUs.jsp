@@ -23,7 +23,7 @@
 <body>
 	<jsp:include page="TopNavBar.jsp" flush="true"/>
 	<div class="container-fluid">
-	    <section class="contact-clean" style="background: url(../images/contactUs3.jpeg) center;">
+	    <section class="contact-clean" style="background: url(../images/contactUs3_4096x2730.jpeg); background-size:100%; background-repeat: no-repeat; height: 100vh;">
 	        <form method="post">
 	            <h2 class="text-center" style="font-family: 'Open Sans', sans-serif; color: var(--bs-blue);">Contact us</h2>
 	            <div class="mb-3"><input class="form-control" type="text" name="name" placeholder="Name"></div>

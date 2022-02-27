@@ -26,7 +26,7 @@
 <body>
     <jsp:include page="TopNavBar.jsp" flush="true"/>
     <div class="container-fluid">
-        <section style="background: url(../images/loyaltyLookup.jpg) center;">
+        <section style="background: url(../images/loyaltyLookup.jpg); background-size:100%; background-repeat: no-repeat; height: 100vh;">
             <div id="lookupFormRow" class="row justify-content-center text-center">
                 <h1 style="color: var(--bs-white);font-family: 'Open Sans', sans-serif;font-weight: bold;text-shadow: 0px 0px 20px var(--bs-blue);">Loyalty Points Lookup</h1>
                 <div class="col-6">

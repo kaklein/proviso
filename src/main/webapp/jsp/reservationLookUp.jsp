@@ -37,7 +37,7 @@
 	%>
 
     <div class="container-fluid">
-    	<section style="background: url(../images/reservationLookup2.jpg); height: 800px; background-size: cover;" center;">
+    	<section style="background: url(../images/reservationLookup3.jpg); background-size:100%; background-repeat: no-repeat; height: 100vh;">
 	        <div id="formRow" class="row justify-content-center">
 	            <h1 class="text-center" style="color: var(--bs-white);font-family: 'Open Sans', sans-serif;font-weight: bold;">Reservation Lookup</h1>
 	            <div class="col-6" style="background: var(--bs-white);">
