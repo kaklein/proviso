@@ -27,9 +27,15 @@
         <section class="portfolio-block photography">
             <div class="container">
                 <div class="row g-0">
-                    <div class="col-md-6 col-lg-4 item zoom-on-hover"><img class="img-fluid image" src="${pageContext.request.contextPath}/images/landingBridgeScene.jpg"></div>
-                    <div class="col-md-6 col-lg-4 item zoom-on-hover"><img class="img-fluid image" src="${pageContext.request.contextPath}/images/landingHotelBed.jpg"></div>
-                    <div class="col-md-6 col-lg-4 item zoom-on-hover"><img class="img-fluid image" src="${pageContext.request.contextPath}/images/landingHotelRoom.jpg"></div>
+                    <div class="col-md-6 col-lg-4 item zoom-on-hover">
+                    	<img class="img-fluid image" src="${pageContext.request.contextPath}/images/landingBridgeScene_4096x2730.jpg">
+                   	</div>
+                    <div class="col-md-6 col-lg-4 item zoom-on-hover">
+                    	<img class="img-fluid image" src="${pageContext.request.contextPath}/images/landingHotelBed.jpg">
+                   	</div>
+                    <div class="col-md-6 col-lg-4 item zoom-on-hover">
+                    	<img class="img-fluid image" src="${pageContext.request.contextPath}/images/landingHotelRoom_4096x2730.jpg">
+                   	</div>
                 </div>
             </div>
         </section>
@@ -43,7 +49,7 @@
                     <div class="carousel-item active">
                     	<img class="w-75 d-block mx-auto" src="${pageContext.request.contextPath}/images/carousel1.jpg" alt="Slide Image"></div>
                     <div class="carousel-item">
-                    	<img class="w-75 d-block mx-auto" src="${pageContext.request.contextPath}/images/carousel2.jpg" alt="Slide Image"></div>
+                    	<img class="w-75 d-block mx-auto" src="${pageContext.request.contextPath}/images/carousel2_1059x662.jpg" alt="Slide Image"></div>
                     <div class="carousel-item">
                     	<img class="w-75 d-block mx-auto" src="${pageContext.request.contextPath}/images/carousel3.jpg" alt="Slide Image"></div>
                 </div>
