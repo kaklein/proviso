@@ -16,7 +16,7 @@
 	}
 %>
 
-	<form name="frmSearch" method="get" action="index.jsp">
+	<form name="frmSearch" method="get" action="">
 	  <table>
 	    <tr>
 	      <th>
@@ -33,13 +33,13 @@
 	try {
 		Class.forName("com.mysql.jdbc.Driver");
 		
-		connect =  DriverManager.getConnection("jdbc:mysql://localhost/reservation" +
-				"?user=root&password=1234");
+		connect =  DriverManager.getConnection("jdbc:mysql://localhost/proviso" +
+				"?user=proviso_user&password=password");
 		
 		s = connect.createStatement();
 		
-		String sql = "SELECT * FROM  datatable WHERE OrderId like '%" +  keyword + "%' " +
-		" ORDER BY OrderId ASC";
+		String sql = "SELECT * FROM  orders WHERE id like '%" +  keyword + "%' " +
+		" ORDER BY id ASC";
 		
 		System.out.println(sql);
 		
@@ -48,7 +48,7 @@
 		<table  width="600" border="1">
 		  <tr>
 		    <th width="91"> <div align="center">OrderId </div></th>
-		    <th width="98"> <div align="center">checlin_date </div></th>
+		    <th width="98"> <div align="center">checkin_date </div></th>
 		    <th width="198"> <div align="center">checkout_date </div></th>
 		    <th width="97"> <div align="center">numberof_gust </div></th>
 		    <th width="59"> <div align="center">room_size </div></th>
@@ -58,14 +58,14 @@
 		  </tr>	
 			<%while((rec!=null) && (rec.next())) { %>
 				  <tr>
-				    <td><div align="center"><%=rec.getString("OrderId")%></div></td>
-				    <td><%=rec.getString("checlin_date")%></td>
-				    <td><%=rec.getString("checkout_date")%></td>
-				    <td><div align="center"><%=rec.getString("numberof_gust")%></div></td>
+				    <td><div align="center"><%=rec.getString("id")%></div></td>
+				    <td><%=rec.getString("checkin")%></td>
+				    <td><%=rec.getString("checkout")%></td>
+				    <td><div align="center"><%=rec.getString("guests")%></div></td>
+				    <td align="right"><%=rec.getString("room")%></td>
 				    <td align="right"><%=rec.getString("wifi")%></td>
-				    <td align="right"><%=rec.getString("room_size")%></td>
-				    <td align="right"><%=rec.getString("BreadFast")%></td>
-				     <td align="right"><%=rec.getString("packing")%></td>
+				    <td align="right"><%=rec.getString("breakfast")%></td>
+				     <td align="right"><%=rec.getString("parking")%></td>
 				  </tr>
 	       	<%}%>
 	  	</table>      
