@@ -99,5 +99,26 @@ public class JdbcUserDao implements UserDao {
 		
 		return customerId;
 	}
+	
+	public int getTotalPoints(Long customerId) {
+		int points = -1;
+		
+		Connection conn = db.getConn();
+		try {
+			String sql = "SELECT points FROM users WHERE id = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setLong(1, customerId);
+			
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				points = rs.getInt("points");
+			}
+		} catch (SQLException e) {
+			System.out.println("Exception getting total points: " + e);
+		} finally {
+			db.closeConn(conn);
+		}
+		return points;
+	}
 
 }

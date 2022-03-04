@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 
 public class JdbcOrderDao implements OrderDao {
@@ -66,9 +67,58 @@ public class JdbcOrderDao implements OrderDao {
 	
 	@Override
 	public Order find(Long orderId) {
-		/* SPRINT 3 TO-DO: method to return order object from orderId for reservation lookup page */
+		/* SPRINT 3 TODO: method to return order object from orderId for reservation lookup page */
 		Order order = new Order(1, "", "", "", true, true, true, 1, 1, 1); // delete this - only here to avoid errors
 		return order; // delete this - only here to avoid errors
 	}
+	
+	
+	// used to display the order number on the OrderSuccess page
+	public int getOrderNumber() {
+		int orderNumber = 0;
 
+		Connection conn = db.getConn();
+		try {
+			String sql = "SELECT MAX(id) FROM orders";
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			if (rs.next()) {
+				orderNumber = rs.getInt(1);
+				return orderNumber;
+			}
+			
+		} catch (SQLException e) {
+			System.out.println("Exception adding order to database: " + e);
+		}	finally {
+			db.closeConn(conn);
+		}
+				
+		return 87;
+	}
+
+	// method to return loyalty point info for orders based on user id
+	public ArrayList<Order> getOrderLoyaltyInfo(Long customerId) {
+		ArrayList<Order> orderList = new ArrayList<>();
+		
+		Connection conn= db.getConn();
+		try {
+			String sql = "SELECT * FROM orders WHERE customer_id = ? ORDER BY checkin DESC";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setLong(1, customerId);
+			ResultSet rs = ps.executeQuery();
+			
+			while (rs.next() ) {
+				// create Order object for current record
+				Order currentOrder = new Order(rs.getInt("id"), rs.getInt("customer_id"), rs.getString("checkin"), rs.getString("checkout"), rs.getString("room"), rs.getBoolean("wifi"), rs.getBoolean("breakfast"), rs.getBoolean("parking"), rs.getInt("guests"), rs.getFloat("price"), rs.getInt("points_earned"));
+				// add to order list
+				orderList.add(currentOrder);
+			}
+		} catch (SQLException e) {
+			System.out.println("Exception getting orders by customer id: " + e);
+		} finally {
+			db.closeConn(conn);
+		}
+		return orderList;
+	}
+	
 }

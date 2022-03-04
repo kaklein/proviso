@@ -20,8 +20,12 @@
 </head>
 <body>
 	<jsp:include page="TopNavBar.jsp" flush="true"/>
+	<jsp:useBean id="JdbcOrderDao" class="proviso.service.impl.JdbcOrderDao"></jsp:useBean>
+	<% int orderNumber = JdbcOrderDao.getOrderNumber(); %>
 
 	<h2 style="text-align: center;">Thank you, your reservation has been booked.</h2>
+	<h5 style="text-align: center;">Your order number is <span style="color: blue;"><%=orderNumber %></span></h5>
+	
 	
 	<jsp:include page="Footer.jsp" flush="true"/>
 </body>

@@ -1,11 +1,4 @@
-.login-dark {
-  height: 1000px;
-  /*
-  background: #475d62 url(../../assets/img/carousel4.jpg);
-  */
-  background-size: cover;
-  position: relative;
-}
+
 
 .login-dark form {
   max-width: 320px;

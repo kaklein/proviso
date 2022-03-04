@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
@@ -176,6 +177,32 @@ public class ProvisoServlet extends HttpServlet implements Servlet {
 					}
 					break;
 				}
+				
+				case "loyaltyLookup": {
+					HttpSession session = request.getSession();
+					Long customerId;
+					if (request.getParameter("customerId") == null || request.getParameter("customerId").equals("")) {
+						customerId = null;
+						url = "/jsp/loyaltyLookup.jsp";
+						break;
+					} else {
+						customerId = Long.parseLong(request.getParameter("customerId"));
+					} 				
+					
+					// get list of associated orders and add to session
+					JdbcOrderDao orderDao = new JdbcOrderDao();
+					ArrayList<Order> orderList = orderDao.getOrderLoyaltyInfo(customerId);
+					session.setAttribute("orderList", orderList);
+					
+					// get total points for customer and add to session
+					JdbcUserDao userDao = new JdbcUserDao();
+					int points = userDao.getTotalPoints(customerId);
+					session.setAttribute("totalPoints", points);
+					
+					url = "/jsp/loyaltyLookup.jsp";
+					break;
+				}
+				
 				case "logout": {
 					HttpSession session = request.getSession();
 					session.invalidate();

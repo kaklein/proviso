@@ -31,8 +31,8 @@
 
 <body>
 	<jsp:include page="TopNavBar.jsp" flush="true"/>
-    <div class="container container-fluid" id="background">
-        <section class="login-dark" style="background: url(../images/reservationBackground.jpg) center;">
+    <div class="container container-fluid">
+        <section class="login-dark" style="background: url(../images/reservationBackground.jpg); background-size:100%; background-repeat: no-repeat; height: 100vh;">
             <form class="form-inline" method="post" action="${pageContext.request.contextPath}/hotel/ProvisoServlet">
             		<input type="hidden" name="action" value="bookReservation">
                 <div class="form-group form-group-row">
