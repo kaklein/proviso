@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&amp;display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/Footer-Basic.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/Login-Form-Clean-1.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/Login-Form-Clean.css">
@@ -27,6 +28,7 @@
     		message = "<p>Logged in as " + session.getAttribute("username") + "</p><p><a href='/proviso/hotel?action=logout'>Log out</a></p>";
     	} 
     %>
+
 </head>
 
 <body>
@@ -38,13 +40,13 @@
                 <div class="form-group form-group-row">
                     <div class="mb-3">
                     	<label class="form-label" for="checkinDate" style="text-align: center;color: var(--bs-gray-500);">Check-In Date:
-                    		<input class="form-control" id="checkinDate" type="date" style="color: var(--bs-gray-600);text-align: center;font-weight: bold;" name="checkInDate" required>
+                    		<input class="form-control" id="checkinDate" type="date" style="color: var(--bs-gray-600);text-align: center;font-weight: bold;" name="checkInDate" onchange="setMinCheckout(event)" required>
                    		</label>
                		</div>
                 </div>
                 <div class="form-group form-group-row">
                     <div class="mb-3">
-                    	<label class="form-label" for="checkinDate" style="text-align: center;color: var(--bs-gray-500);">Check-Out Date:
+                    	<label class="form-label" for="checkoutDate" style="text-align: center;color: var(--bs-gray-500);">Check-Out Date:
                     		<input class="form-control" id="checkoutDate" type="date" style="color: var(--bs-gray-600);text-align: center;font-weight: bold;" name="checkOutDate" required>
                    		</label>
                 	</div>
@@ -52,7 +54,7 @@
                 <div id="bookingDropdowns" class="form-group form-group-row">
                 	<select class="form-select" name="numberGuests"style="background: #1e2833;border-style: none;color: var(--bs-gray-500);">
     					<optgroup label="Number of Guests">
-					        <option value=""disabled selected hidden>Number of Guests</option>
+					        <option value=""disabled selected hidden="">Select Number of Guests</option>
 					        <option value="1">1</option>
 					        <option value="2">2</option>
 					        <option value="3">3</option>
@@ -64,7 +66,7 @@
                 <div id="bookingDropdowns" class="form-group form-group-row">
                 	<select class="form-select" name="roomSize" style="background: #1e2833;border-style: none;color: var(--bs-gray-500);">
     					<optgroup label="Room Sizes">
-					        <option value=""disabled selected hidden>Select a Room Size</option>
+					        <option value=""disabled selected hidden="">Select a Room Size</option>
 					        <option value="king">One King</option>
 					        <option value="queen">One Queen</option>
 					        <option value="twoQueen">Two Queen</option>
@@ -100,6 +102,25 @@
         </section>
     </div>
     <jsp:include page="Footer.jsp" flush="true"/>
+
+    
+    <script>
+    	// set default min for checkin and checkout to today
+    	let today = new Date().toISOString().slice(0, 10);
+    	document.getElementById("checkinDate").setAttribute("min", today);
+    	document.getElementById("checkoutDate").setAttribute("min", today);
+
+    	// when checkin date is changed, set minimum on checkout field as one day after checkin
+    	function setMinCheckout(e) {
+      	let checkinString = e.target.value;
+      	if (Date.parse(checkinString)) {
+        	let minCheckoutNanos = (Date.parse(checkinString) + (3600 * 1000 * 24));
+        	let minCheckout = new Date(minCheckoutNanos).toISOString().slice(0, 10);
+         	let checkout = document.getElementById("checkoutDate");
+        	checkout.setAttribute("min", minCheckout);
+      	}
+    	}
+    </script>
 </body>
 
 </html>
