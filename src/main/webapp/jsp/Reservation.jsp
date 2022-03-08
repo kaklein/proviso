@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&amp;display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/Footer-Basic.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/Login-Form-Clean-1.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/Login-Form-Clean.css">
@@ -53,7 +54,7 @@
                 <div id="bookingDropdowns" class="form-group form-group-row">
                 	<select class="form-select" name="numberGuests"style="background: #1e2833;border-style: none;color: var(--bs-gray-500);">
     					<optgroup label="Number of Guests">
-					        <option value=""disabled selected hidden>Number of Guests</option>
+					        <option value=""disabled selected hidden="">Select Number of Guests</option>
 					        <option value="1">1</option>
 					        <option value="2">2</option>
 					        <option value="3">3</option>
@@ -65,7 +66,7 @@
                 <div id="bookingDropdowns" class="form-group form-group-row">
                 	<select class="form-select" name="roomSize" style="background: #1e2833;border-style: none;color: var(--bs-gray-500);">
     					<optgroup label="Room Sizes">
-					        <option value=""disabled selected hidden>Select a Room Size</option>
+					        <option value=""disabled selected hidden="">Select a Room Size</option>
 					        <option value="king">One King</option>
 					        <option value="queen">One Queen</option>
 					        <option value="twoQueen">Two Queen</option>
